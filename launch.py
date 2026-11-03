@@ -8,9 +8,9 @@ def clear():
 
 clear()
 
-succeed = input("If the clear command was set correctly, this should be the only message. If so, enter y to proceed\n")
+succeed = input("If the clear command was set correctly, this should be the only message. If so, press enter to proceed\n")
 
-if succeed.lower().strip() != "y":
+if succeed.lower().strip() != "":
     exit(-1)
 
 board_size = input("Enter the board size (default: 20): ")
