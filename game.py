@@ -201,6 +201,7 @@ class Game:
                         if action == "d":
                             if len(self.lines) > 0:
                                 self.lines.pop(line_id)
+                            self.clear()
                         if action == "m":
                             self.state = "MAP"
                             self.clear()
@@ -216,7 +217,8 @@ class Game:
                         if action == "r":
                             station_name = input("Name of the station: ")
                             if station_name in self.lines[line_id].stations:
-                                self.lines[line_id].remove(station_name)
+                                self.lines[line_id].stations.remove(station_name)
+                            self.clear()
                         if action == "x":
                             self.running = False
                         if action.isdigit():
