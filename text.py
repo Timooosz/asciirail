@@ -1,5 +1,5 @@
 def printc(text: str, foreground: int, background: int):
-    print(f'\033[{30 + foreground}m \033[{40 + background}m' + str(text) + "\033[0m", end="")
+    print(f'\033[{30 + foreground}m\033[{40 + background}m' + str(text) + "\033[0m", end="")
 
 def ito36(n):
     if n < 10: return n
