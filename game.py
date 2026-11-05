@@ -103,6 +103,11 @@ class Game:
             print("Line does not exist")
             return
         printc(self.lines[index].name, 7, self.lines[index].color)
+        if len(self.lines[index].stations) > 1:
+            if self.lines[index].stations[0] == self.lines[index].stations[-1]:
+                printc(" Ringlinie", 7, self.lines[index].color)
+            else:
+                printc(f' {self.lines[index].stations[0]} <-> {self.lines[index].stations[-1]}', 7, self.lines[index].color)
         print("")
         if len(self.lines[index].stations) == 0:
             print("No stations added to line")
