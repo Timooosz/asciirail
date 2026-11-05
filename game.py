@@ -105,9 +105,9 @@ class Game:
         printc(self.lines[index].name, 7, self.lines[index].color)
         if len(self.lines[index].stations) > 1:
             if self.lines[index].stations[0] == self.lines[index].stations[-1]:
-                printc(" Ringlinie", 7, self.lines[index].color)
+                printc(": Ringlinie", 7, self.lines[index].color)
             else:
-                printc(f' {self.lines[index].stations[0]} <-> {self.lines[index].stations[-1]}', 7, self.lines[index].color)
+                printc(f': {self.lines[index].stations[0]} <-> {self.lines[index].stations[-1]}', 7, self.lines[index].color)
         print("")
         if len(self.lines[index].stations) == 0:
             print("No stations added to line")
@@ -165,6 +165,7 @@ class Game:
                             self.clear()
                         if action == "x":
                             self.running = False
+                            break
 
                     case "LINE":
 
@@ -200,7 +201,6 @@ class Game:
                             
                             self.lines[line_id].stations.insert(index, name)
                             self.clear()
-                            
                         if action == "b":
                             self.state = "DAY"
                         if action == "d":
@@ -226,6 +226,7 @@ class Game:
                             self.clear()
                         if action == "x":
                             self.running = False
+                            break
                         if action.isdigit():
                             if int(action) < len(self.lines):
                                 line_id = int(action)

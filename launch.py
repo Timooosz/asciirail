@@ -1,5 +1,6 @@
 import os
 from game import Game
+from plot import draw_network
 
 clear_cmd = input("Enter the command that clears your terminal: ")
 
@@ -20,4 +21,4 @@ game = Game(clear_cmd, int(board_size))
 
 Game.run(game)
 
-os.system("pause")
+draw_network(game)
